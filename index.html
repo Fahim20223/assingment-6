@@ -105,19 +105,18 @@
       <div class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 py-7">
         <div class="col-span-2 w-full h-fit">
           <h1 class="text-xl font-semibold mb-2">Categories</h1>
-          <ul id="category-container" class="space-y-1">
-            <li
-              class="hover:bg-green-600 hover:text-white p-2 rounded-lg cursor-pointer bg-green-600"
-            >
-              All Trees
-            </li>
-          </ul>
+          <ul id="category-container" class="space-y-1"></ul>
         </div>
         <div
           id="plant-container"
           class="col-span-8 w-full grid grid-cols-1 lg:grid-cols-3 gap-10"
-        ></div>
-        <div class="col-span-2 bg-red-700 w-full h-fit">Light weight</div>
+        >
+          <div class="cart-container"></div>
+        </div>
+        <div class="col-span-2 bg-white w-full h-fit">
+          <h1 class="text-2xl font-semibold">Your Cart</h1>
+          <div id="cart-bg" class="bg-[#f0fdf4]"></div>
+        </div>
       </div>
     </main>
 

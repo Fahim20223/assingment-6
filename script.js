@@ -1,6 +1,9 @@
 const categoryContainer = document.getElementById("category-container");
 const plantContainer = document.getElementById("plant-container");
 
+const cartContainer = document.getElementById("cart-container");
+// const cartContainer = getElementById("cart-bg");
+
 // Load categories
 fetch("https://openapi.programming-hero.com/api/categories")
   .then((res) => res.json())
@@ -59,11 +62,13 @@ const displayPlants = (plants) => {
   </div>
   <div class="text-green-700 font-bold text-lg"><p>৳<span>${plt.price}</span></p></div>
    </div>
-  <button class="btn bg-green-600 text-white w-full rounded-3xl mt-6">Add to Cart</button>
+  <button id="cart-container" class="btn bg-green-600 text-white w-full rounded-3xl mt-6">Add to Cart</button>
 </div>
     `;
   });
 };
+
+// Showing All Plants
 
 const showAllPlants = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -92,9 +97,13 @@ const displayAllPlants = (plant) => {
   </div>
   <div class="text-green-700 font-bold text-lg"><p>৳<span>${plnt.price}</span></p></div>
    </div>
-  <button class="btn bg-green-600 text-white w-full rounded-3xl mt-6">Add to Cart</button>
+  <button id="cart-btn" class="btn bg-green-600 text-white w-full rounded-3xl mt-6">Add to Cart</button>
 </div>
     `;
   });
 };
+
 showAllPlants();
+plantContainer.addEventListener("click", (e) => {
+  console.log(e.target.parentNode.children[0]);
+});
