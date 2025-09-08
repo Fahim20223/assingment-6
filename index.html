@@ -112,12 +112,121 @@
           class="col-span-8 w-full grid grid-cols-1 lg:grid-cols-3 gap-10"
         ></div>
         <div
-          class="col-span-8 md:col-span-2 bg-white w-full h-fit rounded-xl shadow-lg p-3 ml-3"
+          class="col-span-8 md:col-span-2 bg-white w-full lg: rounded-xl shadow-lg p-3 ml-3"
         >
           <h1 class="text-2xl font-semibold mb-3">Your Cart</h1>
           <div id="cart-bg" class=""></div>
         </div>
       </div>
+
+      <!-- About the Campaign -->
+
+      <div class="max-w-6xl mx-auto mt-14">
+        <h1 class="text-3xl font-semibold text-center">About the Campaign</h1>
+        <div class="flex flex-col md:flex-row gap-12 items-center mt-6">
+          <div><img src="./assets/about.png" alt="" /></div>
+          <div class="text-gray-700">
+            <p>
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting <br class="hidden md:block" />
+              climate change. Since our start, we’ve planted over 500,000 trees
+              <br class="hidden md:block" />
+              worldwide. By joining our campaign, you help restore forests,
+              create <br class="hidden md:block" />
+              habitats for wildlife, and combat global warming.
+            </p>
+            <ul class="list-inside list-disc mt-6">
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-20 bg-[#cff0dc] p-20">
+        <h1 class="text-3xl font-semibold text-center mb-7">Our Impact</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-15 items-center">
+          <div class="bg-white rounded-xl py-14">
+            <h1 class="text-center text-green-600 font-semibold text-3xl">
+              500K+
+            </h1>
+            <p class="text-center text-gray-500 font-semibold mt-2">
+              Trees Planted
+            </p>
+          </div>
+          <div class="bg-white rounded-xl py-14">
+            <h1 class="text-center text-green-600 font-semibold text-3xl">
+              120+
+            </h1>
+            <p class="text-center text-gray-500 font-semibold mt-2">
+              Communities Involved
+            </p>
+          </div>
+          <div class="bg-white rounded-xl py-14">
+            <h1 class="text-center text-green-600 font-semibold text-3xl">
+              30+
+            </h1>
+            <p class="text-center text-gray-500 font-semibold mt-2">
+              Countries Reached
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- plant tree -->
+
+      <div class="bg-[#166534] p-32">
+        <div>
+          <h1
+            class="text-center text-lg md:text-3xl font-bold md:font-semibold text-white mb-6"
+          >
+            Plant a Tree Today
+          </h1>
+          <div
+            class="text-center bg-[#15803d] px-6 py-10 w-[200px] md:w-[550px] md:mx-auto rounded-xl"
+          >
+            <form>
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="input w-full rounded-lg"
+              />
+              <br />
+              <br />
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                class="input w-full rounded-lg"
+              />
+              <br />
+              <br />
+              <select
+                class="select select-neutral w-full rounded-lg border-none"
+              >
+                <option disabled selected>Number of Trees</option>
+                <option>1 Tree- $5</option>
+                <option>5 Tree- $25</option>
+                <option>10 Tree- $50</option>
+              </select>
+              <button
+                class="btn mt-6 w-full bg-yellow-400 border-none rounded-3xl text-green-700"
+              >
+                Donate Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+
+      <footer>
+        <div class="bg-[#14532d] p-5">
+          <p class="text-white text-center">
+            © 2025 Green Earth. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
     </main>
 
     <script src="./script.js"></script>

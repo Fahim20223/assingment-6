@@ -170,7 +170,7 @@ const displayAllCarts = (cart) => {
       <div class="p-2 rounded-xl  mb-5 bg-[#f0fdf4] shadow-lg flex items-center justify-between">
         <div>
         <h1 class="font-bold">${crt.name}</h1>
-        <p class="text-green-600">৳${crt.price}</p>
+        <p class="text-green-600">${crt.price}</p>
         </div>
         <div onclick="handleDeleteCarts('${crt.id}')" class="cursor-pointer">
         ❌
