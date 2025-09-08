@@ -2,6 +2,10 @@ const categoryContainer = document.getElementById("category-container");
 const plantContainer = document.getElementById("plant-container");
 const cartContainer = document.getElementById("cart-bg");
 let cart = [];
+let total = 0;
+const totalContainer = document.getElementById("total-container");
+// const totalCount = document.getElementById("total-container");
+const spinnerContainer = document.getElementById("loading-container");
 
 // Load categories
 fetch("https://openapi.programming-hero.com/api/categories")
@@ -34,6 +38,7 @@ const displayCategories = (categories) => {
 
 // Load plants by category
 const loadAllPlants = (id) => {
+  manageSpinner(true);
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -65,6 +70,7 @@ const displayPlants = (plants) => {
 </div>
     `;
   });
+  manageSpinner(false);
 };
 
 // Showing All Plants
@@ -138,8 +144,11 @@ const displayAllPlants = (plant) => {
 // };
 
 plantContainer.addEventListener("click", (e) => {
+  const target = e.target.parentNode.children[0].innerText;
+
   if (e.target.innerText === "Add to Cart") {
     handleCarts(e);
+    alert(`${target} has been added to the cart`);
   }
 });
 
@@ -163,8 +172,12 @@ const handleCarts = (crt) => {
 };
 
 const displayAllCarts = (cart) => {
+  // console.log(cart);
+
   cartContainer.innerHTML = "";
   cart.forEach((crt) => {
+    // alert(`${crt.name} added`);
+    // crt.name = "";
     cartContainer.innerHTML += `
      
       <div class="p-2 rounded-xl  mb-5 bg-[#f0fdf4] shadow-lg flex items-center justify-between">
@@ -177,6 +190,9 @@ const displayAllCarts = (cart) => {
         </div>
       </div>
     `;
+    // total += `${crt.price}`;
+    // totalContainer.innerText = total.innerText;
+    // console.log(totalContainer);
   });
 };
 
@@ -186,6 +202,24 @@ const handleDeleteCarts = (cartsId) => {
   // console.log(filteredCarts);
   cart = filteredCarts;
   displayAllCarts(cart);
+};
+
+const showLoading = () => {
+  plantContainer.innerHTML = `
+  
+  <span class="loading loading-spinner loading-lg"></span>
+  
+  `;
+};
+
+const manageSpinner = (status) => {
+  if (status == true) {
+    spinnerContainer.classList.remove("hidden");
+    plantContainer.classList.add("hidden");
+  } else {
+    spinnerContainer.classList.add("hidden");
+    plantContainer.classList.remove("hidden");
+  }
 };
 
 showAllPlants();

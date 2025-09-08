@@ -7,10 +7,6 @@
     <!-- favicon -->
     <title>Green Earth</title>
 
-    <!-- style.css -->
-
-    <link rel="stylesheet" href="styles/styles.css" />
-
     <link
       rel="shortcut icon"
       href="./assets/hero-leaf1.png"
@@ -102,11 +98,19 @@
     </header>
 
     <main class="bg-[#f0fdf4]">
+      <div
+        id="loading-container"
+        class="flex justify-center items-center py-10 text-center mx-auto hidden"
+      >
+        <span class="loading loading-dots loading-xl"></span>
+      </div>
+
       <div class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 py-7">
         <div class="col-span-2 w-full h-fit">
           <h1 class="text-xl font-semibold mb-2">Categories</h1>
           <ul id="category-container" class="space-y-1"></ul>
         </div>
+
         <div
           id="plant-container"
           class="col-span-8 w-full grid grid-cols-1 lg:grid-cols-3 gap-10"
@@ -115,7 +119,9 @@
           class="col-span-8 md:col-span-2 bg-white w-full lg: rounded-xl shadow-lg p-3 ml-3"
         >
           <h1 class="text-2xl font-semibold mb-3">Your Cart</h1>
-          <div id="cart-bg" class=""></div>
+          <div id="cart-bg" class="">
+            <p id="total-container" class="text-lg font-semibold">Total:</p>
+          </div>
         </div>
       </div>
 
