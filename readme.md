@@ -8,11 +8,7 @@ Answer:
 
 - `let` : One can reassign but cannot redeclare his/her variable in let .
 
-- `Const` :
-
-cannot be reassigned
-
-cannot be redeclared
+- `Const` : cannot be reassigned but cannot be redeclared
 
 **2. What is the difference between map(), forEach(), and filter()?**
 
@@ -57,4 +53,4 @@ in strings :
 
 console.log("name + is + age + years old )
 
-users use + operator repeatedly & harder to read .
+users use + operator repeatedly & it is harder to read .

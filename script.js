@@ -77,6 +77,7 @@ const displayPlants = (plants) => {
 // Showing All Plants
 
 const showAllPlants = () => {
+  manageSpinner(true);
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => {
@@ -107,6 +108,7 @@ const displayAllPlants = (plant) => {
 </div>
     `;
   });
+  manageSpinner(false);
 };
 
 // plantContainer.addEventListener("click", (e) => {
@@ -160,9 +162,10 @@ const handleCarts = (crt) => {
   // console.log(cardBody);
   // extract data
   const name = cardBody.children[0].innerText; // h2 is the first child
+
   const price =
     cardBody.children[2].children[1].children[0].children[0].innerText;
-  console.log(price);
+  // console.log(price);
   const id = cardBody.id;
 
   cart.push({
