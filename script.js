@@ -186,7 +186,7 @@ const displayAllCarts = (cart) => {
      
       <div class="p-2 rounded-xl  mb-5 bg-[#f0fdf4] shadow-lg flex items-center justify-between">
         <div>
-        <h1 class="font-bold">${crt.name}</h1>
+        <h1 class="font-bold ">${crt.name}</h1>
         <p class="text-green-600">${crt.price}</p>
         </div>
         <div onclick="handleDeleteCarts('${crt.id}')" class="cursor-pointer">
@@ -238,10 +238,10 @@ const displayTreeDetails = (trees) => {
 
   treeDetailsContainer.innerHTML = `
    
-  <div class"card bg-base-100  shadow-sm>
-                <h1 class="text-xl font-bold mb-3 ">${trees.name}</h1>
+   <div class"card bg-base-100  shadow-sm>
+                <h1 class="text-xl font-bold mb-3">${trees.name}</h1>
                 <figure class="">
-                <img class="w-full h-96 mx-auto rounded-lg" src="${trees.image}"/>
+                <img class="object-cover h-[350px] w-full rounded-lg" src="${trees.image}"/>
                  </figure>
                 <p class="mt-4 mb-2">
                   <span class="text-lg

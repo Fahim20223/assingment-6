@@ -57,4 +57,4 @@ in strings :
 
 console.log("name + is + age + years old )
 
-you use + operator repeatedly & harder to read .
+users use + operator repeatedly & harder to read .
