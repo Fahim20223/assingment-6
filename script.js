@@ -111,41 +111,6 @@ const displayAllPlants = (plant) => {
   manageSpinner(false);
 };
 
-// plantContainer.addEventListener("click", (e) => {
-//   // console.log(e.target.parentNode.children[2].children[1].innerText);
-//   // console.log(e.target);
-//   if (e.target.innerText === "Add to Cart") {
-//     // console.log("add to cart cooked");
-//     handleCarts(e);
-
-//     //
-//   }
-// });
-// const handleCarts = (e) => {
-//   const paragraph = e.target.parentNode.children[0].innerText;
-//   // console.log(paragraph);
-//   const id = e.target.parentNode.id;
-//   // console.log(id);
-//   cart.push({
-//     paragraph: paragraph,
-//     id: id,
-//   });
-//   displayAllCarts(cart);
-// };
-
-// const displayAllCarts = (cart) => {
-//   cart.forEach((crt) => {
-//     cartContainer.innerHTML += `
-
-//   <div>
-//   <h1>${crt.name}</h1>
-//   <p>${crt.price}</p>
-//   </div>
-
-//   `;
-//   });
-// };
-
 plantContainer.addEventListener("click", (e) => {
   const target = e.target.parentNode.children[0].innerText;
 
