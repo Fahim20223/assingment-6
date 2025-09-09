@@ -18,21 +18,21 @@ cannot be redeclared
 
 Answer:
 
-- ` map()`: it creates a new array in loop and returns it .
+- ` map()`: it creates a new array in loop and returns a new array with result in it .
 
-- `forEach()` : it creates a new array in loop but don't returns it .
+- `forEach()` : it creates a new array in loop but doesn't returns a new array in it .
 
-- `filter()` : it worked in conditions and returns what condition says .
+- `filter()` : it worked in conditions and returns a new array with elements that matches the conditions .
 
 **3. What are arrow functions in ES6?**
 
-Answer: it makes functions short & readable
+Answer: arrow functions are shorter to way of writing functions . it makes functions short & readable .
 
 **4. How does destructuring assignment work in ES6?**
 
 Answer:
 
-- destructuring assignment is a way to take values from arrays & object and put them into a variable .
+- destructuring assignment is a way to take values from arrays & objects to put them into a variable .
 
 ex: ```const [a,b,c]=[10,20,30]
 here --> a = 10 , b = 20 , c = 30
