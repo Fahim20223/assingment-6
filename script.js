@@ -6,6 +6,7 @@ let total = 0;
 const totalContainer = document.getElementById("total-container");
 // const totalCount = document.getElementById("total-container");
 const spinnerContainer = document.getElementById("loading-container");
+const treeDetailsContainer = document.getElementById("tree-details-container");
 
 // Load categories
 fetch("https://openapi.programming-hero.com/api/categories")
@@ -58,8 +59,8 @@ const displayPlants = (plants) => {
       src="${plt.image}" />
   </figure>
   <div id="${plt.id}" class="card-body">
-    <h2 class="card-title font-bold">${plt.name}</h2>
-    <p class="font-semibold">${plt.description}</p>
+    <h2 onclick="loadTreeDetail(${plt.id})" class="card-title font-bold">${plt.name}</h2>
+        <p class="font-semibold">${plt.description}</p>
    <div class="flex justify-between items-center">
     <div class="card-actions justify-start">
       <button class="btn btn-outline btn-success rounded-xl">${plt.category}</button>
@@ -94,7 +95,7 @@ const displayAllPlants = (plant) => {
       src="${plnt.image}" />
   </figure>
   <div id="${plnt.id}" class="card-body">
-    <h2 class="card-title font-bold">${plnt.name}</h2>
+    <h2 onclick="loadTreeDetail(${plnt.id})" class="card-title font-bold">${plnt.name}</h2>
     <p class="font-semibold">${plnt.description}</p>
    <div class="flex justify-between items-center">
     <div class="card-actions justify-start">
@@ -220,6 +221,44 @@ const manageSpinner = (status) => {
     spinnerContainer.classList.add("hidden");
     plantContainer.classList.remove("hidden");
   }
+};
+
+const loadTreeDetail = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  // console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayTreeDetails(details.plants);
+};
+
+const displayTreeDetails = (trees) => {
+  console.log(trees);
+
+  treeDetailsContainer.innerHTML = `
+   
+  <div class"card bg-base-100  shadow-sm>
+                <h1 class="text-xl font-bold mb-3 ">${trees.name}</h1>
+                <figure class="">
+                <img class="w-full h-96 mx-auto rounded-lg" src="${trees.image}"/>
+                 </figure>
+                <p class="mt-4 mb-2">
+                  <span class="text-lg
+                  font-semibold">Category: </span><span>${trees.category}</span>
+                </p>
+                <p class="mt-2 mb-2">
+                  <span class="text-lg font-semibold">Price:</span> <span>৳</span>${trees.price}
+                </p>
+                <p class="mt-2 mb-2">
+                  <span class="text-lg
+                   font-semibold">Description: </span
+                  ><span>${trees.description}</span>
+                </p>
+              </div>
+
+
+  `;
+
+  document.getElementById("tree_modal").showModal();
 };
 
 showAllPlants();
