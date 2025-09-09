@@ -2,7 +2,7 @@ const categoryContainer = document.getElementById("category-container");
 const plantContainer = document.getElementById("plant-container");
 const cartContainer = document.getElementById("cart-bg");
 let cart = [];
-let total = 0;
+// let total = 0;
 const totalContainer = document.getElementById("total-container");
 // const totalCount = document.getElementById("total-container");
 const spinnerContainer = document.getElementById("loading-container");
@@ -157,10 +157,12 @@ const handleCarts = (crt) => {
   // go up from button → card-body
   const cardBody = crt.target.parentNode; // parent of the button = card-body\
   // console.log(cardBody);
-
+  // console.log(cardBody);
   // extract data
   const name = cardBody.children[0].innerText; // h2 is the first child
-  const price = cardBody.children[2].children[1].innerText;
+  const price =
+    cardBody.children[2].children[1].children[0].children[0].innerText;
+  console.log(price);
   const id = cardBody.id;
 
   cart.push({
@@ -174,11 +176,12 @@ const handleCarts = (crt) => {
 
 const displayAllCarts = (cart) => {
   // console.log(cart);
-
+  let total = 0;
   cartContainer.innerHTML = "";
   cart.forEach((crt) => {
     // alert(`${crt.name} added`);
     // crt.name = "";
+
     cartContainer.innerHTML += `
      
       <div class="p-2 rounded-xl  mb-5 bg-[#f0fdf4] shadow-lg flex items-center justify-between">
@@ -191,10 +194,9 @@ const displayAllCarts = (cart) => {
         </div>
       </div>
     `;
-    // total += `${crt.price}`;
-    // totalContainer.innerText = total.innerText;
-    // console.log(totalContainer);
+    total += Number(crt.price);
   });
+  totalContainer.innerHTML = `Total : ৳${total}`;
 };
 
 const handleDeleteCarts = (cartsId) => {
